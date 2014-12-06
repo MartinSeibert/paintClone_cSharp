@@ -13,9 +13,10 @@ namespace PaintClone
         { 
         
         }
-        public Line(int x_in, int y_in, int width_in, int height_in, Color color_in, Boolean dashed_in, int thickness_in, 
+        public Line(System.Windows.Forms.Panel drawPanel_in, int x_in, int y_in, int width_in, int height_in, Color color_in, Boolean dashed_in, int thickness_in, 
             Boolean filled_in, int alpha_in, Boolean gradient_in, Color gradient1_in, Color gradient2_in, Boolean cyclic_in) 
         {
+            this.drawPanel = drawPanel_in;
             this.x = x_in;
             this.y = y_in;
             this.width = width_in;
@@ -33,7 +34,9 @@ namespace PaintClone
         }
         public override void Draw()
         {
-            throw new NotImplementedException();
+            this.graphicsObj = drawPanel.CreateGraphics();
+            Pen mypen = new Pen(color, 5);
+            graphicsObj.DrawLine(mypen, 20, 20, 200, 210);
         }
         public override void Draw(Image im)
         {

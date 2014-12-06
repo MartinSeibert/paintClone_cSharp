@@ -9,6 +9,8 @@ namespace PaintClone
 {
     abstract class Shape
     {
+
+
         // later if I choose to make them private then I will need to setup the set and get for them
         //private int xField;
         //private int yField;
@@ -29,6 +31,9 @@ namespace PaintClone
         //private Color gradient1Field;
         //private Color gradient2Field;
         //private Boolean textured;
+
+        public System.Drawing.Graphics graphicsObj;
+        public System.Windows.Forms.Panel drawPanel;
         public int x;
         public int y;
         public int newx;
@@ -51,7 +56,7 @@ namespace PaintClone
         public Color gradient1;
         public Color gradient2;
         public Boolean textured;
-
+       
         // I need a c# version of a BufferedImage for the texture image
 
         // I need two methods for writing and reading an object, so that I can save a project and then open a project
